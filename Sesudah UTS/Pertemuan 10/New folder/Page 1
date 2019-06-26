@@ -1,0 +1,446 @@
+Page 1
+Pemrograman Web – S1 Informatika - Ainul Yaqin, M.Kom
+AJAX
+Pokok Bahasan :
+ AJAX
+ Contoh penggunaan
+AJAX (Asynchronous JavaScript dan XML). AJAX bukanlah bahasa
+pemrograman baru, tapi cara baru untuk menggunakan standar yang ada. AJAX
+adalah seni pertukaran data dengan server, dan memperbarui bagian dari halaman
+web - tanpa reload seluruh halaman.
+Page 2
+Pemrograman Web – S1 Informatika - Ainul Yaqin, M.Kom
+XMLHttpRequest Object
+ Object yang digunakan untuk pertukaran data dengan server.
+ Object yang memungkinkan pertukaran data tanpa melakukan reload
+halaman
+ Cara mendefinisikan Object tersebut:
+
+
+IE5 + IE6
+CODE XMLHttpRequest
+SEND REQUEST
+ Untuk mengirim data digunakan fungsi open() dan send()
+ Dapat menggunakan model POST atau GET
+Page 3
+Pemrograman Web – S1 Informatika - Ainul Yaqin, M.Kom
+Async = True vs Async = False
+ Proses send() dapat menggunakan opsi Async = True atau Async = False.
+ ditambahkan pada parameter ke-3 fungsi open()
+ Untuk Async = True berarti pada saat proses dan masih menunggu
+response dari server maka dapat mengerjakan yang lain.
+ Untuk Async = False berarti saat proses dan masih menunggu response
+dari server tidak dapat mengerjakan proses yang lain, harus menunggu
+sampai proses selesai.
+Server Response
+ Terdapat 2 response yang dikirim dari server:
+ Response text
+ Response XML
+ Untuk response text dapat langsung diterima dengan
+cara
+document.getElementById("myDiv").innerHTML=xmlhttp
+.responseText;
+Page 4
+Pemrograman Web – S1 Informatika - Ainul Yaqin, M.Kom
+ Dan untuk response xml
+xmlDoc=xmlhttp.responseXML;
+txt="";
+x=xmlDoc.getElementsByTagName("ARTIS"
+);
+for (i=0;i<x.length;i++)
+{
+txt=txt +
+x[i].childNodes[0].nodeValue +
+"<br>";
+}
+document.getElementById("myDiv").inne
+rHTML=txt;
+OnReadyStateChange Event
+ Saat dilakukan pengiriman ke server, kita dapat melihat status dan state
+yang sedang berjalan menggunakan property .readystate dan .status
+Page 5
+Pemrograman Web – S1 Informatika - Ainul Yaqin, M.Kom
+Contoh Program
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function loadXMLDoc()
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+{// code for IE7+, Firefox, Chrome, Opera, Safari
+xmlhttp=new XMLHttpRequest();
+}
+else
+{// code for IE6, IE5
+xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+}
+xmlhttp.onreadystatechange=function()
+{
+if (xmlhttp.readyState==4 && xmlhttp.status==200)
+{
+document.getPage 1
+Pemrograman Web – S1 Informatika - Ainul Yaqin, M.Kom
+AJAX
+Pokok Bahasan :
+ AJAX
+ Contoh penggunaan
+AJAX (Asynchronous JavaScript dan XML). AJAX bukanlah bahasa
+pemrograman baru, tapi cara baru untuk menggunakan standar yang ada. AJAX
+adalah seni pertukaran data dengan server, dan memperbarui bagian dari halaman
+web - tanpa reload seluruh halaman.
+Page 2
+Pemrograman Web – S1 Informatika - Ainul Yaqin, M.Kom
+XMLHttpRequest Object
+ Object yang digunakan untuk pertukaran data dengan server.
+ Object yang memungkinkan pertukaran data tanpa melakukan reload
+halaman
+ Cara mendefinisikan Object tersebut:
+
+
+IE5 + IE6
+CODE XMLHttpRequest
+SEND REQUEST
+ Untuk mengirim data digunakan fungsi open() dan send()
+ Dapat menggunakan model POST atau GET
+Page 3
+Pemrograman Web – S1 Informatika - Ainul Yaqin, M.Kom
+Async = True vs Async = False
+ Proses send() dapat menggunakan opsi Async = True atau Async = False.
+ ditambahkan pada parameter ke-3 fungsi open()
+ Untuk Async = True berarti pada saat proses dan masih menunggu
+response dari server maka dapat mengerjakan yang lain.
+ Untuk Async = False berarti saat proses dan masih menunggu response
+dari server tidak dapat mengerjakan proses yang lain, harus menunggu
+sampai proses selesai.
+Server Response
+ Terdapat 2 response yang dikirim dari server:
+ Response text
+ Response XML
+ Untuk response text dapat langsung diterima dengan
+cara
+document.getElementById("myDiv").innerHTML=xmlhttp
+.responseText;
+Page 4
+Pemrograman Web – S1 Informatika - Ainul Yaqin, M.Kom
+ Dan untuk response xml
+xmlDoc=xmlhttp.responseXML;
+txt="";
+x=xmlDoc.getElementsByTagName("ARTIS"
+);
+for (i=0;i<x.length;i++)
+{
+txt=txt +
+x[i].childNodes[0].nodeValue +
+"<br>";
+}
+document.getElementById("myDiv").inne
+rHTML=txt;
+OnReadyStateChange Event
+ Saat dilakukan pengiriman ke server, kita dapat melihat status dan state
+yang sedang berjalan menggunakan property .readystate dan .status
+Page 5
+Pemrograman Web – S1 Informatika - Ainul Yaqin, M.Kom
+Contoh Program
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function loadXMLDoc()
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+{// code for IE7+, Firefox, Chrome, Opera, Safari
+xmlhttp=new XMLHttpRequest();
+}
+else
+{// code for IE6, IE5
+xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+}
+xmlhttp.onreadystatechange=function()
+{
+if (xmlhttp.readyState==4 && xmlhttp.status==200)
+{
+document.getElementById("myDiv").innerHTML=xmlhttp.resp
+onseText;
+Page 1
+Pemrograman Web – S1 Informatika - Ainul Yaqin, M.Kom
+AJAX
+Pokok Bahasan :
+ AJAX
+ Contoh penggunaan
+AJAX (Asynchronous JavaScript dan XML). AJAX bukanlah bahasa
+pemrograman baru, tapi cara baru untuk menggunakan standar yang ada. AJAX
+adalah seni pertukaran data dengan server, dan memperbarui bagian dari halaman
+web - tanpa reload seluruh halaman.
+Page 2
+Pemrograman Web – S1 Informatika - Ainul Yaqin, M.Kom
+XMLHttpRequest Object
+ Object yang digunakan untuk pertukaran data dengan server.
+ Object yang memungkinkan pertukaran data tanpa melakukan reload
+halaman
+ Cara mendefinisikan Object tersebut:
+
+
+IE5 + IE6
+CODE XMLHttpRequest
+SEND REQUEST
+ Untuk mengirim data digunakan fungsi open() dan send()
+ Dapat menggunakan model POST atau GET
+Page 3
+Pemrograman Web – S1 Informatika - Ainul Yaqin, M.Kom
+Async = True vs Async = False
+ Proses send() dapat menggunakan opsi Async = True atau Async = False.
+ ditambahkan pada parameter ke-3 fungsi open()
+ Untuk Async = True berarti pada saat proses dan masih menunggu
+response dari server maka dapat mengerjakan yang lain.
+ Untuk Async = False berarti saat proses dan masih menunggu response
+dari server tidak dapat mengerjakan proses yang lain, harus menunggu
+sampai proses selesai.
+Server Response
+ Terdapat 2 response yang dikirim dari server:
+ Response text
+ Response XML
+ Untuk response text dapat langsung diterima dengan
+cara
+document.getElementById("myDiv").innerHTML=xmlhttp
+.responseText;
+Page 4
+Pemrograman Web – S1 Informatika - Ainul Yaqin, M.Kom
+ Dan untuk response xml
+xmlDoc=xmlhttp.responseXML;
+txt="";
+x=xmlDoc.getElementsByTagName("ARTIS"
+);
+for (i=0;i<x.length;i++)
+{
+txt=txt +
+x[i].childNodes[0].nodeValue +
+"<br>";
+}
+document.getElementById("myDiv").inne
+rHTML=txt;
+OnReadyStateChange Event
+ Saat dilakukan pengiriman ke server, kita dapat melihat status dan state
+yang sedang berjalan menggunakan property .readystate dan .status
+Page 5
+Pemrograman Web – S1 Informatika - Ainul Yaqin, M.Kom
+Contoh Program
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function loadXMLDoc()
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+{// code for IE7+, Firefox, Chrome, Opera, Safari
+xmlhttp=new XMLHttpRequest();
+}
+else
+{// code for IE6, IE5
+xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+}
+xmlhttp.onreadystatechange=function()
+{
+if (xmlhttp.readyState==4 && xmlhttp.status==200)
+{
+document.getElementById("myDiv").innerHTML=xmlhttp.resp
+onseText;<!DOCTYPE html>
+<html>
+<head>
+<script>
+function loadXMLDoc()
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+{// code for IE7+, Firefox, Chrome, Opera, Safari
+xmlhttp=new XMLHttpRequest();
+}
+else
+{// code for IE6, IE5
+xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+}
+xmlhttp.onreadystatechange=function()
+{
+if (xmlhttp.readyState==4 && xmlhttp.status==200)
+{
+document.getEPage 1
+Pemrograman Web – S1 Informatika - Ainul Yaqin, M.Kom
+AJAX
+Pokok Bahasan :
+ AJAX
+ Contoh penggunaan
+AJAX (Asynchronous JavaScript dan XML). AJAX bukanlah bahasa
+pemrograman baru, tapi cara baru untuk menggunakan standar yang ada. AJAX
+adalah seni pertukaran data dengan server, dan memperbarui bagian dari halaman
+web - tanpa reload seluruh halaman.
+Page 2
+Pemrograman Web – S1 Informatika - Ainul Yaqin, M.Kom
+XMLHttpRequest Object
+ Object yang digunakan untuk pertukaran data dengan server.
+ Object yang memungkinkan pertukaran data tanpa melakukan reload
+halaman
+ Cara mendefinisikan Object tersebut:
+
+
+IE5 + IE6
+CODE XMLHttpRequest
+SEND REQUEST
+ Untuk mengirim data digunakan fungsi open() dan send()
+ Dapat menggunakan model POST atau GET
+Page 3
+Pemrograman Web – S1 Informatika - Ainul Yaqin, M.Kom
+Async = True vs Async = False
+ Proses send() dapat menggunakan opsi Async = True atau Async = False.
+ ditambahkan pada parameter ke-3 fungsi open()
+ Untuk Async = True berarti pada saat proses dan masih menunggu
+response dari server maka dapat mengerjakan yang lain.
+ Untuk Async = False berarti saat proses dan masih menunggu response
+dari server tidak dapat mengerjakan proses yang lain, harus menunggu
+sampai proses selesai.
+Server Response
+ Terdapat 2 response yang dikirim dari server:
+ Response text
+ Response XML
+ Untuk response text dapat langsung diterima dengan
+cara
+document.getElementById("myDiv").innerHTML=xmlhttp
+.responseText;
+Page 4
+Pemrograman Web – S1 Informatika - Ainul Yaqin, M.Kom
+ Dan untuk response xml
+xmlDoc=xmlhttp.responseXML;
+txt="";
+x=xmlDoc.getElementsByTagName("ARTIS"
+);
+for (i=0;i<x.length;i++)
+{
+txt=txt +
+x[i].childNodes[0].nodeValue +
+"<br>";
+}
+document.getElementById("myDiv").inne
+rHTML=txt;
+OnReadyStateChange Event
+ Saat dilakukan pengiriman ke server, kita dapat melihat status dan state
+yang sedang berjalan menggunakan property .readystate dan .status
+Page 5
+Pemrograman Web – S1 Informatika - Ainul Yaqin, M.Kom
+Contoh Program
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function loadXMLDoc()
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+{// code for IE7+, Firefox, Chrome, Opera, Safari
+xmlhttp=new XMLHttpRequest();
+}
+else
+{// code for IE6, IE5
+xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+}
+xmlhttp.onreadystatechange=function()
+{
+if (xmlhttp.readyState==4 && xmlhttp.status==200)
+{
+document.getElementById("myDiv").innerHTML=xmlhttp.resp
+onseText;
+}
+}
+xmlhttp.open("GET","coba.txt",true);
+xmlhttp.send();
+}
+</script>
+</head>
+<body>
+<div id="myDiv"><h2>Let AJAX change this
+text</h2></div>
+<button type="button" onclick="loadXMLDoc()">Change
+Content</button>
+</body>
+</html>
+Page 6
+Pemrograman Web – S1 Informatika - Ainul Yaqin, M.Kom
+DAFTAR PUSTAKA
+Bengkel Internet Pens-ITS. Materi III Javascript.
+Sidik, Betha. 2011. JavaScript.Informatika: Bandung
+W3schools.comlementById("myDiv").innerHTML=xmlhttp.resp
+onseText;
+}
+}
+xmlhttp.open("GET","coba.txt",true);
+xmlhttp.send();
+}
+</script>
+</head>
+<body>
+<div id="myDiv"><h2>Let AJAX change this
+text</h2></div>
+<button type="button" onclick="loadXMLDoc()">Change
+Content</button>
+</body>
+</html>
+}
+}
+xmlhttp.open("GET","coba.txt",true);
+xmlhttp.send();
+}
+</script>
+</head>
+<body>
+<div id="myDiv"><h2>Let AJAX change this
+text</h2></div>
+<button type="button" onclick="loadXMLDoc()">Change
+Content</button>
+</body>
+</html>
+Page 6
+Pemrograman Web – S1 Informatika - Ainul Yaqin, M.Kom
+DAFTAR PUSTAKA
+Bengkel Internet Pens-ITS. Materi III Javascript.
+Sidik, Betha. 2011. JavaScript.Informatika: Bandung
+W3schools.com}
+xmlhttp.open("GET","coba.txt",true);
+xmlhttp.send();
+}
+</script>
+</head>
+<body>
+<div id="myDiv"><h2>Let AJAX change this
+text</h2></div>
+<button type="button" onclick="loadXMLDoc()">Change
+Content</button>
+</body>
+</html>
+Page 6
+Pemrograman Web – S1 Informatika - Ainul Yaqin, M.Kom
+DAFTAR PUSTAKA
+Bengkel Internet Pens-ITS. Materi III Javascript.
+Sidik, Betha. 2011. JavaScript.Informatika: Bandung
+W3schools.comElementById("myDiv").innerHTML=xmlhttp.resp
+onseText;
+}
+}
+xmlhttp.open("GET","coba.txt",true);
+xmlhttp.send();
+}
+</script>
+</head>
+<body>
+<div id="myDiv"><h2>Let AJAX change this
+text</h2></div>
+<button type="button" onclick="loadXMLDoc()">Change
+Content</button>
+</body>
+</html>
+Page 6
+Pemrograman Web – S1 Informatika - Ainul Yaqin, M.Kom
+DAFTAR PUSTAKA
+Bengkel Internet Pens-ITS. Materi III Javascript.
+Sidik, Betha. 2011. JavaScript.Informatika: Bandung
+W3schools.com
